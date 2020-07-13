@@ -14,6 +14,5 @@ public class Content {
 	private String imgLazy;
 	private String price;
 	private String shop;
-	private String dataUrl;
 
 }

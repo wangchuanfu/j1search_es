@@ -24,6 +24,9 @@ public class SearchGoodsAction {
     public  List searchPage(@PathVariable("keyword") String keyword,
                             @PathVariable("pageNo") Integer pageNo,
                             @PathVariable("pageSize") Integer pageSize) throws  Exception{
+        if(keyword==null){
+            keyword="java";//设置默认关键字
+        }
         List<Map<String, Object>> list = initIndexService.search(keyword, pageNo, pageSize);
 
         return list;

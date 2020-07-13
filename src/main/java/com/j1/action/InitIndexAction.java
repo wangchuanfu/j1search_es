@@ -4,6 +4,7 @@ import com.j1.service.InitIndexService;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -28,5 +29,10 @@ public class InitIndexAction {
       return "initIndex false";
 
    }
+    @RequestMapping("/hello")
+    public String helloSpringBoot(@RequestParam(value = "userName") String userName) throws Exception{
+
+        return "hello hot "+userName;
+    }
 
 }

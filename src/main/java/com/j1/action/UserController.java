@@ -13,18 +13,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 //表示该controller类下所有的方法都公用的一级上下文根
 @RequestMapping(value = "/springboot")
 public class UserController {
-	@Autowired
-	@Qualifier("restHighLevelClient")
-	public RestHighLevelClient client;
     //这里使用@RequestMapping注解表示该方法对应的二级上下文路径
     @RequestMapping(value = "/getUserByGet", method = RequestMethod.GET)
     String getUserByGet(@RequestParam(value = "userName") String userName) throws Exception{
-    	//创建索引请求
-    			CreateIndexRequest request = new CreateIndexRequest ( "books" );
-    			//执行请求
-    			CreateIndexResponse response = client.indices ().create ( request, RequestOptions.DEFAULT );
-    			System.out.print (  response.toString ());
-        return "Hello " + userName;
+
+        return "Hello " + userName+"哈哈哈hot";
     }
 
     //通过RequestMethod.POST表示请求需要时POST方式
